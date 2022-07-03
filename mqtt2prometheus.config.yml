@@ -1,2 +1,8 @@
 mqtt:
   server: tcp://mosquitto:1883
+  topic_path: wozsensors/+/#
+  device_id_regex: "wozsensors/(?P<deviceid>.*)"
+metrics:
+ - prom_name: temperature
+   mqtt_name: temperature
+   type: gauge
