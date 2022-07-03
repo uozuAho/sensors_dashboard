@@ -25,5 +25,5 @@ docker run -it eclipse-mosquitto mosquitto_pub -h host.docker.internal -t 'wozse
 ```
 
 # To do
-- scrape metrics
-- show metrics on grafana
+- persist prometheus db across container restarts/image removals
+- persist grafana dashboards
