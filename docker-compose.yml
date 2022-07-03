@@ -9,6 +9,21 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+  mqtt2prometheus:
+    image: ghcr.io/hikhvar/mqtt2prometheus
+    ports:
+      - "9641:9641"
+    volumes:
+      - ./mqtt2prometheus.config.yml:/config.yaml
 
 volumes:
   prometheus.yml:
+  mosquitto.conf:
+  mqtt2prometheus.config.yml:

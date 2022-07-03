@@ -8,14 +8,17 @@ prometheus.
 
 # Run
 ```sh
-# start all services
+# start all services:
 ./run.sh
-# stop all services
+# test subscribing and publishing to an MQTT topic:
+docker run -it eclipse-mosquitto mosquitto_sub -h host.docker.internal -t 'my/topic' -v
+docker run -it eclipse-mosquitto mosquitto_pub -h host.docker.internal -t 'my/topic' -m 'yo'
+# see raw metrics at http://localhost:9641/metrics
+# stop all services:
 ./stop.sh
 ```
 
 # To do
-- run a MQTT server
-- expose MQTT topics as metrics
+- expose a topic as metrics: https://github.com/hikhvar/mqtt2prometheus/pkgs/container/mqtt2prometheus
 - scrape metrics
 - show metrics on grafana
