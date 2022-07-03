@@ -13,8 +13,12 @@ prometheus.
 # test subscribing and publishing to an MQTT topic:
 docker run -it eclipse-mosquitto mosquitto_sub -h host.docker.internal -t 'wozsensors/lounge' -v
 docker run -it eclipse-mosquitto mosquitto_pub -h host.docker.internal -t 'wozsensors/lounge' -m '{"temperature": 22.2}'
+# go to prometheus: http://localhost:9090
+# search for 'temperature'
+# profit!
+
+# more
 # see raw metrics at http://localhost:9641/metrics
-# if you sent the above message, you should see a metric like:
 # temperature{sensor="lounge",topic="wozsensors/lounge"} 22.9 1656816843918
 # stop all services:
 ./stop.sh
