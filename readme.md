@@ -26,4 +26,5 @@ docker run -it eclipse-mosquitto mosquitto_pub -h host.docker.internal -t 'wozse
 
 # To do
 - persist prometheus db across container restarts/image removals
+    - change run/stop to delete images
 - persist grafana dashboards
