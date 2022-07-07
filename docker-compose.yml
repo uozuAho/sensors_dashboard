@@ -20,9 +20,11 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/data:/prometheus
   grafana:
-    image:  grafana/grafana-oss
+    image: grafana/grafana-oss
     ports:
       - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana
 
 volumes:
   prometheus.yml:
