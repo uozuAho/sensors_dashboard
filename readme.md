@@ -6,7 +6,7 @@ prometheus.
 # Prerequisites
 - docker
 
-# Run
+# First run
 Here's a quick start that will get temperature data from a mock sensor showing
 on a grafana dashboard:
 
@@ -29,3 +29,14 @@ directories. Prometheus stores sensor data, while grafana stores your
 dashboards. Be careful before deleting them!
 
 To stop all running services, run `./stop.sh`.
+
+
+# My sensors
+This is my sensor setup.
+
+Add scripts under cron/ to your crontab.
+
+
+# to do
+- send rpi zero temp readings
+- pin docker images to versions
