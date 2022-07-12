@@ -6,20 +6,20 @@ services:
       - "1883:1883"
       - "9001:9001"
     volumes:
-      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
   mqtt2prometheus:
     image: ghcr.io/hikhvar/mqtt2prometheus
     ports:
       - "9641:9641"
     volumes:
-      - ./mqtt2prometheus.config.yml:/config.yaml
+      - ./mqtt2prometheus.config.yml:/config.yaml:ro
   prometheus:
     image: prom/prometheus
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./prometheus/data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
   prometheus_push:
     image: prom/pushgateway
     ports:
@@ -29,9 +29,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./grafana/data:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
 
 volumes:
-  prometheus.yml:
-  mosquitto.conf:
-  mqtt2prometheus.config.yml:
+  prometheus-data:
+  grafana-data:
