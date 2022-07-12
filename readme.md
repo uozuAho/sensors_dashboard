@@ -5,6 +5,7 @@ prometheus.
 
 # Prerequisites
 - docker
+- jq
 
 # First run
 Here's a quick start that will get temperature data from a mock sensor showing
