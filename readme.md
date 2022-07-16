@@ -37,9 +37,9 @@ This is my sensor setup.
 
 Add scripts under cron/ to your crontab.
 
+For remote sensors, see [rpi_zero_18b20_sensor](./rpi_zero_18b20_sensor/rpi_18b20.md).
 
 # to do
-- set up bom cron on rpi
-- send rpi zero temp readings
 - pin docker images to versions
 - back up prometheus and grafana data
+- automate adding crontabs: https://stackoverflow.com/questions/610839/how-can-i-programmatically-create-a-new-cron-job
