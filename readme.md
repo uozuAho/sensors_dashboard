@@ -39,6 +39,18 @@ Add scripts under cron/ to your crontab.
 
 For remote sensors, see [rpi_zero_18b20_sensor](./rpi_zero_18b20_sensor/rpi_18b20.md).
 
+## monitor raspberry pi
+Export pi system stats.
+
+```sh
+# find the latest release here: https://github.com/prometheus/node_exporter/releases
+# download it:
+wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0-rc.0/node_exporter-1.4.0-rc.0.linux-armv7.tar.gz
+tar xvfz node_exporter...
+cd node_exporter-*.*-armv7
+./node_exporter
+```
+
 # to do
 - pin docker images to versions
 - back up prometheus and grafana data
